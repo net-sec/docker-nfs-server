@@ -1,8 +1,7 @@
-FROM alpine:latest
+FROM quay.io/net-sec/alpine:latest
 LABEL maintainer "Steven Iveson <steve@iveson.eu>"
-LABEL source "https://github.com/sjiveson/nfs-server-alpine"
+LABEL source "https://github.com/net-sec/docker-nfs-server"
 LABEL branch "master"
-COPY Dockerfile README.md /
 
 RUN apk add --no-cache --update --verbose nfs-utils bash iproute2 && \
     rm -rf /var/cache/apk /tmp /sbin/halt /sbin/poweroff /sbin/reboot && \
